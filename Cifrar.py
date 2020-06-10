@@ -1,20 +1,7 @@
-######################################################################################################
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-#                                                                                                    #
-######################################################################################################
+#(atualizado (10/06/2020) quando quizer brincar com cifra de subistituição ou refatorar o codigo):
+# este codigo pode ser utilizado por qualquer pessoa e esta disponivel em:
+# https://github.com/GustaSchmidt/CifraDeCezar-Py
+#
 global alfabeto
 alfabeto = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 global PalavrasComuns
