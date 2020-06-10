@@ -35,7 +35,26 @@ def main(online = True):
         elif op == '2':
             decifrar()
         elif op == '3':
-            ForceBreak()
+            print("ForceBreak")
+            print('''
+                [1] Adiquirir texto apartir de arquivo(.txt)
+                [2] Digitar texto (recomendado para mensagens curtas)
+
+                [S] Voltar ao menu
+            ''')
+            op3 = input("selecione uma opção: ")
+            if op3 == '1':
+                print("renomeie o arquivo para 'forceB.txt' e coloque o arquivo na mesma pasta que o programa")
+                input("tecle enter para continuar...")
+                arquivo = open('forceB.txt', 'r')
+                texto = arquivo.read()
+                print(ForceBreak(texto))
+                arquivo.close()
+            elif op3 == '2':
+                texto = str(input("digite a mensagem cifrada: "))
+                print(ForceBreak(texto))
+            elif (op3 == 'S') or (op3 == 's'):
+                pass
         elif (op == 's') or (op == 'S'):
             online = False
             print("o programa foi fechado")
@@ -85,6 +104,7 @@ def cifrar():
         return print(cifra)
     elif (op == 's')or (op == 'S'):
         return
+
 def decifrar():
     print("decifrar")
     print('''
@@ -133,9 +153,8 @@ def decifrar():
     else:
         print("opção invalida")
         return
-def ForceBreak():
-    print("ForceBreak")
-    texto = str(input("digite a mensagem cifrada: "))
+
+def ForceBreak(texto):
     chave = 0
     legivel = False
     while legivel == False:
@@ -156,7 +175,9 @@ def ForceBreak():
         if op == 1:
             chave += 1
         elif op == 2:
-            print("texto decifrado = " + cifra)
-            input("tecle enter para continuar")
-            return
+            sucesso = "texto decifrado: chave ="+ str(chave) + " texto =" + cifra
+            return sucesso
+        else:
+            print("opção não existe")
+
 main()
