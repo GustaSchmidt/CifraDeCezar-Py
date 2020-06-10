@@ -137,12 +137,26 @@ def ForceBreak():
     print("ForceBreak")
     texto = str(input("digite a mensagem cifrada: "))
     chave = 0
-    cifra = ''
-    for caractere in texto:
-        if (caractere in alfabeto):
-            IndexCaractere = alfabeto.index(caractere)
-            cifra += alfabeto[(IndexCaractere - chave) % len(alfabeto)]
-        else:
-            cifra += caractere
-    return
+    legivel = False
+    while legivel == False:
+        cifra = ''
+        for caractere in texto:
+            if (caractere in alfabeto):
+                IndexCaractere = alfabeto.index(caractere)
+                cifra += alfabeto[(IndexCaractere - chave) % len(alfabeto)]
+            else:
+                cifra += caractere
+        print(cifra)
+        # debug manual de verificação de inteligibilidade
+        print('''
+            [1] Texto ilegivel
+            [2] Texto legivel
+        ''')
+        op = int(input("selecione uma opção: "))
+        if op == 1:
+            chave += 1
+        elif op == 2:
+            print("texto decifrado = " + cifra)
+            input("tecle enter para continuar")
+            return
 main()
